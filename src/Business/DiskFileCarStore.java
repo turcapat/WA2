@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 /**
  * Created by patrik on 27.2.16.
  */
-public class DiskFileCarStore implements ICarStore {
+public class DiskFileCarStore implements IAbstractStore<Vehicle>{
 
     private String location = "/home/patrik/IdeaProjects/WA2-1,2/Cars";
 

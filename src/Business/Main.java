@@ -18,7 +18,7 @@ public class Main {
         Truck truck1 = new Truck();
         truck1.setName("Nakladni auto");
 
-        ICarStore carStore = new DiskFileCarStore();
+        IAbstractStore carStore = new DiskFileCarStore();
         carStore.saveNew(car1);
         carStore.saveNew(truck1);
 
@@ -39,7 +39,7 @@ public class Main {
         person.setForename("Jan");
         person.setSurname("Novak");
 
-        IPersonStore personStore = new DiskFilePersonStore();
+        IAbstractStore personStore = new DiskFilePersonStore();
         personStore.saveNew(person);
 
         List<Person> customers = personStore.getAll();
@@ -53,8 +53,8 @@ public class Main {
         }
 
         Reservation reservation = new Reservation(car1,person,2);
-        IReservationStore reservationStore = new DiskFileReservationStore();
-        reservationStore.makeReservation(reservation);
+        IAbstractStore reservationStore = new DiskFileReservationStore();
+        reservationStore.saveNew(reservation);
 
         List<Reservation> reservations = reservationStore.getAll();
         System.out.println();

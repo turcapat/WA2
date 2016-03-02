@@ -16,12 +16,12 @@ import java.util.logging.Logger;
 /**
  * Created by patrik on 28.2.16.
  */
-public class DiskFileReservationStore implements IReservationStore {
+public class DiskFileReservationStore implements IAbstractStore<Reservation>{
 
     private String location = "/home/patrik/IdeaProjects/WA2-1,2/Reservations";
 
     @Override
-    public void makeReservation(Reservation reservation) throws IOException {
+    public void saveNew(Reservation reservation) throws IOException {
         String id = UUID.randomUUID().toString();
         reservation.setId(id);
         serialize(reservation);
@@ -42,7 +42,7 @@ public class DiskFileReservationStore implements IReservationStore {
                         } catch (IOException e) {
                             Logger.getLogger(DiskFileReservationStore.class.getName()).log(Level.SEVERE, null, e);
                         } catch (ClassNotFoundException e) {
-                            Logger.getLogger(DiskFileReservationStore.class.getName()).log(Level.SEVERE, null, e);
+                            Logger.getLogger(DiskFileReservationStore   .class.getName()).log(Level.SEVERE, null, e);
                         }
                         result.add(reservation);
                     }

@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 /**
  * Created by patrik on 28.2.16.
  */
-public class DiskFilePersonStore implements IPersonStore {
+public class DiskFilePersonStore implements IAbstractStore<Person> {
 
     private String location = "/home/patrik/IdeaProjects/WA2-1,2/Persons";
 
